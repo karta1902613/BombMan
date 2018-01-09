@@ -58,6 +58,7 @@ public class MainFrame extends JFrame {
     private JMenuItem jmiHelp = new JMenuItem("Help");
     private JMenuItem jmiMap1 = new JMenuItem("Map1");
     private JMenuItem jmiMap2 = new JMenuItem("Map2");
+    private JMenuItem jmiMap3 = new JMenuItem("Map3");
 
 
 
@@ -92,7 +93,6 @@ public class MainFrame extends JFrame {
 
 
 
-
     private int x1 = 0, y1 = 0 ,x2 = 7, y2 = 7;
 
     public MainFrame() {
@@ -124,6 +124,7 @@ public class MainFrame extends JFrame {
         jmGame.add(jmiExit);
         jmMap.add(jmiMap1);
         jmMap.add(jmiMap2);
+        jmMap.add(jmiMap3);
         jmAbout.add(jmiHelp);
 
         jmiNG.addActionListener(new ActionListener(){
@@ -138,11 +139,12 @@ public class MainFrame extends JFrame {
                 System.exit(0);
             }
         });
+
         jmiHelp.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                DescriptionFrame df = new DescriptionFrame();
-                df.setVisible(true);
+                            DescriptionFrame df = new DescriptionFrame();
+                            df.setVisible(true);
             }
         });
         jmiMap1.addActionListener(new ActionListener(){
@@ -159,7 +161,13 @@ public class MainFrame extends JFrame {
                 restart();
             }
         });
-
+        jmiMap3.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                map=2;
+                restart();
+            }
+        });
 
 
         this.addKeyListener( new KeyAdapter(){
@@ -2671,6 +2679,9 @@ public class MainFrame extends JFrame {
             case 1:
                 map2();
                 break;
+            case 2:
+                map3();
+                break;
 
         }
 
@@ -2771,6 +2782,50 @@ public class MainFrame extends JFrame {
         jlbs[5][7].setIcon(imgeStone2); jlbsCode[5][7]=1;
         jlbs[7][2].setIcon(imgeStone2); jlbsCode[7][2]=1;
         jlbs[7][5].setIcon(imgeStone2); jlbsCode[7][5]=1;
+
+
+
+    }
+    public void map3(){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                jlbs[i][j].setIcon(imgeBox);
+                jlbsCode[i][j]=2;
+            }
+        }
+        jlbs[0][1].setIcon(imgeGrass); jlbsCode[0][1]=0;
+        jlbs[1][0].setIcon(imgeGrass); jlbsCode[1][0]=0;
+        jlbs[7][6].setIcon(imgeGrass); jlbsCode[7][6]=0;
+        jlbs[6][7].setIcon(imgeGrass); jlbsCode[6][7]=0;
+
+
+        jlbs[6][0].setIcon(imgeGrass); jlbsCode[6][0]=0;
+        jlbs[7][0].setIcon(imgeGrass); jlbsCode[7][0]=0;
+        jlbs[7][1].setIcon(imgeGrass); jlbsCode[7][1]=0;
+        jlbs[0][6].setIcon(imgeGrass); jlbsCode[0][6]=0;
+        jlbs[0][7].setIcon(imgeGrass); jlbsCode[0][7]=0;
+        jlbs[1][7].setIcon(imgeGrass); jlbsCode[1][7]=0;
+
+        jlbs[1][1].setIcon(imgeStone2); jlbsCode[1][1]=1;
+        jlbs[1][2].setIcon(imgeStone2); jlbsCode[1][2]=1;
+        jlbs[1][3].setIcon(imgeStone2); jlbsCode[1][3]=1;
+        jlbs[1][4].setIcon(imgeStone2); jlbsCode[1][4]=1;
+        jlbs[1][6].setIcon(imgeStone2); jlbsCode[1][6]=1;
+        jlbs[2][3].setIcon(imgeStone2); jlbsCode[2][3]=1;
+        jlbs[2][6].setIcon(imgeStone2); jlbsCode[2][6]=1;
+        jlbs[3][1].setIcon(imgeStone2); jlbsCode[3][1]=1;
+        jlbs[3][5].setIcon(imgeStone2); jlbsCode[3][5]=1;
+        jlbs[3][6].setIcon(imgeStone2); jlbsCode[3][6]=1;
+        jlbs[4][1].setIcon(imgeStone2); jlbsCode[4][1]=1;
+        jlbs[4][2].setIcon(imgeStone2); jlbsCode[4][2]=1;
+        jlbs[4][6].setIcon(imgeStone2); jlbsCode[4][6]=1;
+        jlbs[5][1].setIcon(imgeStone2); jlbsCode[5][1]=1;
+        jlbs[5][4].setIcon(imgeStone2); jlbsCode[5][4]=1;
+        jlbs[6][1].setIcon(imgeStone2); jlbsCode[6][1]=1;
+        jlbs[6][6].setIcon(imgeStone2); jlbsCode[6][6]=1;
+        jlbs[6][3].setIcon(imgeStone2); jlbsCode[6][3]=1;
+        jlbs[6][4].setIcon(imgeStone2); jlbsCode[6][4]=1;
+        jlbs[6][5].setIcon(imgeStone2); jlbsCode[6][5]=1;
 
 
 
